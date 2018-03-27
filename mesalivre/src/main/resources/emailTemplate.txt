@@ -1,0 +1,4 @@
+Prezado(a) usuário(a) ${USUARIO},\n
+Acesse o link ${LINK} para alterar sua senha.\n
+\n\n\n Atenciosamente,\n\n
+Equipe Mesa Livre

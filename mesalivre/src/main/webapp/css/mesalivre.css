@@ -1,0 +1,8 @@
+@charset "UTF-8";
+/* CSS Document */
+.checkBox {
+	padding-top: 0px;
+	height: 15px;
+	border: none;
+	vertical-align: bottom;
+}

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:a4j="http://richfaces.org/a4j">
+<h:head>
+	<title>Mesa Livre - Acessar o sistema</title>
+</h:head>
+<h:body>
+	<h:messages />
+	<br />
+	<h:panelGroup rendered="#{param.erro != null}">
+		<p>Dados inválidos.</p>
+	</h:panelGroup>
+	<h:panelGroup rendered="#{param.logout != null}">
+		<p>Logout efetuado com sucesso.</p>
+	</h:panelGroup>
+
+	<h:form id="formLogin" prependId="false">
+
+		<h2>
+			<center>Mesa Livre - Acessar o sistema</center>
+		</h2>
+		<h:panelGrid columns="3">
+
+			<h:outputText value="Perfil" id="perfil" escape="false" />
+			<h:selectOneRadio id="radioPerfil" value="#{usuarioMB.tipoUsuario}"
+				layout="pageDirection">
+				<f:selectItem id="admin" itemLabel="Administrador" itemValue="1" />
+				<f:selectItem id="profissional" itemLabel="Profissional"
+					itemValue="2" />
+				<f:selectItem id="RH" itemLabel="RH" itemValue="3" />
+			</h:selectOneRadio>
+
+			<br />
+
+			<h:outputLabel for="username" value="Login" />
+			<h:inputText id="username" value="#{usuarioMB.login}" />
+
+			<br />
+
+			<h:outputLabel for="password" value="Senha" />
+			<h:inputSecret id="password" value="#{usuarioMB.senha}" />
+		</h:panelGrid>
+
+		<br />
+
+		<h:commandButton styleClass="btn" value="Entrar" action="entrar" />
+
+		<h:commandButton styleClass="btn" value="Cadastrar"
+			action="admin/cadastrarUsuario/cadastrarUsuario?faces-redirect=true" />
+
+		<h:commandLink action="admin/login/alterarSenha?faces-redirect=true">
+              Esqueci minha senha</h:commandLink>
+
+	</h:form>
+</h:body>
+
+</html>

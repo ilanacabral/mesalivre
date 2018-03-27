@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+	<title>Cadastrar Usuário</title>
+</h:head>
+<h:body>
+	<h:messages />
+
+	<h:form id="formCadastrarUsuario">
+
+		<h:outputLabel for="username" value="Login" />
+		<h:inputText id="username" value="#{usuarioMB.login}" />		
+		<br />
+
+		<h:outputLabel for="password" value="Senha" />
+		<h:inputSecret id="password" value="#{usuarioMB.senha}" />
+		<br />
+		
+		<h:outputLabel for="email" value="Email" />
+		<h:inputText id="email" value="#{usuarioMB.email}" />
+		<br />
+		
+		<!-- Dados complementares do usuario administrador e RH -->
+		
+		<h:outputLabel for="razaoSocial" value="Razão Social" />
+		<h:inputText id="razaoSocial" value="#{usuarioMB.razaoSocial}" />
+		<br />
+		
+		<h:outputLabel for="CNPJ" value="CNPJ" />
+		<h:inputText id="CNPJ" value="#{usuarioMB.cnpj}" />
+		<br />
+		
+				
+		<!-- Dados complementares do usuario profissional -->
+		
+		<h:outputLabel for="nome" value="nome" />
+		<h:inputText id="nome" value="#{usuarioMB.nome}" />
+		<br />
+		
+		<h:outputLabel for="celular" value="celular" />
+		<h:inputText id="celular" value="#{usuarioMB.celular}" />
+		<br />
+		
+		<h:outputLabel for="cpf" value="CPF" />
+		<h:inputText id="cpf" value="#{usuarioMB.cpf}" />
+		<br />
+		
+		<h:outputLabel for="rg" value="RG" />
+		<h:inputText id="rg" value="#{usuarioMB.rg}" />
+		<br />
+
+
+		<h:commandButton styleClass="btn" value="salvar"
+			action="#{usuarioMB.cadastrarUsuario}" />
+
+
+	</h:form>
+</h:body>
+
+</html>
